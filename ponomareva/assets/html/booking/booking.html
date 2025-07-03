@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Результаты поиска — Фортуна-2</title>
+  <link rel="stylesheet" href="../../css/style_booking.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <header>
+    <div class="header-top">
+      <div class="logo">
+        <a href="../../index.html">
+          <img src="../../img/logo.png" alt="Фортуна-2" width="50" height="40">
+          Фортуна-2
+        </a>
+      </div>
+      <nav class="main-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="../../../index.html">Главная</a></li>
+          <li><a href="../../html/search/search.html">Туры</a></li>
+          <li><a href="../../../index.html#customer-reviews">Отзывы</a></li>
+          <li><a href="../../../index.html#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+    <h1>Результаты поиска маршрутов</h1>
+  </header>
+
+  <main>
+    <nav class="breadcrumbs" aria-label="breadcrumb">
+      <ol>
+        <li><a href="/index.html">Главная</a></li>
+        <li><a href="/assets/html/search/search.html">Результаты поиска</a></li>
+        <li>Бронирование</li>
+      </ol>
+    </nav>
+
+    <section class="booking">
+      <div class="container">
+        <h2 class="section-title">Бронирование тура</h2>
+        <form class="booking-form">
+          <div class="form-group">
+            <label for="region">Выберите регион:</label>
+            <select id="region" name="region">
+              <option value="">-- Регион --</option>
+              <option value="africa">Африка</option>
+              <option value="asia">Азия</option>
+              <option value="americas">Америки</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="tour">Выберите тур:</label>
+            <select id="tour" name="tour">
+              <option value="">-- Тур --</option>
+              <option value="kenya">Сафари в Кении</option>
+              <option value="morocco">Марокко и Атласские горы</option>
+              <option value="namibia">Дюны и пустыни Намибии</option>
+              <option value="thailand">Острова Таиланда</option>
+              <option value="japan">Погружение в культуру Японии</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="start-date">Дата начала отдыха</label>
+            <input type="date" id="start-date" name="start-date" required>
+          </div>
+
+          <div class="form-group">
+            <label for="end-date">Дата окончания отдыха</label>
+            <input type="date" id="end-date" name="end-date" required>
+          </div>
+
+
+          <div class="form-group">
+            <label for="people">Количество человек</label>
+            <input type="number" id="people" name="people" min="1" value="1" required>
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Дополнительные услуги</legend>
+            <label><input type="checkbox" name="extras" value="guide"> Услуги проводника</label><br>
+            <label><input type="checkbox" name="extras" value="equipment"> Аренда туристического
+              оборудования</label><br>
+            <label><input type="checkbox" name="extras" value="photo"> Услуги фотографа/видеооператора</label><br>
+            <label><input type="checkbox" name="extras" value="insurance"> Страхование от несчастных случаев</label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="comment">Комментарий к заказу</label>
+            <textarea id="comment" name="comment" rows="4"
+              placeholder="Особые пожелания, предпочтения и т.д."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Ваш email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group total-price">
+            <strong>Итоговая стоимость: <span id="total">0</span> $</strong>
+          </div>
+
+          <button type="submit" class="btn">Оформить бронирование</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- Ваша текущая структура подвала -->
+      <div class="footer-column footer-about">
+        <h4>О компании</h4>
+        <p>Туристическая компания «Фортуна-2» — ваш надежный партнер в организации незабываемых путешествий.</p>
+      </div>
+      <div class="footer-column footer-contacts">
+        <h4>Контакты</h4>
+        <address>
+          Телефон: +7 (495) 123-45-67<br />
+          Email: <a href="mailto:info@fortuna-2.ru">info@fortuna-2.ru</a><br />
+          Адрес: г. Санкт-Петербург, ул. Руставели, д. 33
+        </address>
+      </div>
+      <div class="footer-column footer-navigation">
+        <h4>Навигация</h4>
+                <ul>
+                    <li><a href="../../../index.html">Главная</a></li>
+                    <li><a href="../search/search.html">Туры</a></li>
+                    <li><a href="../../../index.html#customer-reviews">Отзывы</a></li>
+                    <li><a href="../../../index.html#contacts">Контакты</a></li>
+                    <li><a href="#">Карта сайта</a></li>
+                </ul>
+      </div>
+      <div class="footer-column footer-social">
+        <h4>Мы в социальных сетях</h4>
+        <div class="social-buttons">
+          <a href="#" class="social-btn">
+            <img src="../../../assets/img/vk.png" alt="VK" class="social-icon" />
+          </a>
+          <a href="#" class="social-btn">
+            <img src="../../../assets/img/tg.png" alt="Telegram" class="social-icon" />
+          </a>
+          <a href="#" class="social-btn">
+            <img src="../../../assets/img/youtube.png" alt="YouTube" class="social-icon" />
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 Фортуна-2. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+
+</html>

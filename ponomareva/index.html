@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Метаданные страницы -->
+  <meta charset="UTF-8"> <!-- Кодировка документа -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Адаптивность под разные экраны -->
+  <title>Document</title> <!-- Заголовок вкладки браузера -->
+
+  <!-- Подключение основного CSS-файла -->
+  <link rel="stylesheet" href="./assets/css/style_index.css">
+
+  <!-- Подключение шрифтов Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <!-- Шапка сайта -->
+  <header>
+    <div class="header-top" id="header">
+      <!-- Логотип сайта с изображением и названием -->
+      <div class="logo">
+        <a href="./index.html">
+          <img src="./assets/img/logo.png" alt="Фортуна-2" width="50" height="40">
+          Фортуна-2
+        </a>
+      </div>
+
+      <!-- Основное навигационное меню -->
+      <nav class="main-nav" aria-label="Основное меню">
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="./assets/html/search/search.html">Туры</a></li>
+          <li><a href="#customer-reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Заголовок главной страницы -->
+    <h1>Туры по всему миру!</h1>
+
+    <!-- Цитата или слоган компании -->
+    <blockquote class="header-quote">
+      «Путешествие начинается с мечты — мы поможем воплотить её в реальность.»
+    </blockquote>
+
+    <!-- Форма бронирования (поиска тура) -->
+    <div class="booking">
+      <form class="search-form" action="./assets/html/search/search.html" method="GET">
+        <!-- Выбор региона путешествия -->
+        <select id="region" name="region" required>
+          <option value="" disabled selected>Выберите регион</option>
+          <option value="asia">Азия</option>
+          <option value="europe">Европа</option>
+          <option value="africa">Африка</option>
+          <option value="south_america">Южная Америка</option>
+          <option value="north_america">Северная Америка</option>
+        </select>
+
+        <!-- Дата начала отдыха -->
+        <div class="field-wrapper">
+          <input type="date" id="start-date" name="start-date" required>
+          <span class="hint">Дата начала отдыха</span>
+        </div>
+
+        <!-- Дата окончания отдыха -->
+        <div class="field-wrapper">
+          <input type="date" id="end-date" name="end-date" required>
+          <span class="hint">Дата окончания отдыха</span>
+        </div>
+
+        <!-- Количество участников тура -->
+        <div class="field-wrapper">
+          <input type="number" id="participants" name="participants" min="1" max="20" value="1" required>
+          <span class="hint">Количество участников</span>
+        </div>
+
+        <!-- Кнопка отправки формы -->
+        <button type="submit">Поиск</button>
+      </form>
+    </div>
+
+    <!-- Форма подписки на рассылку -->
+    <form class="subscribe-form" action="/subscribe" method="POST" style="margin-top: 1.5em;">
+      <input type="email" name="subscribe-email" placeholder="Введите email для подписки" required>
+      <button type="submit">Подписаться</button>
+    </form>
+  </header>
+
+  <!-- Основное содержимое страницы -->
+  <main>
+
+    <!-- Информация о компании с хлебными крошками -->
+    <section class="company-info">
+      <!-- Хлебные крошки — показывают текущую страницу (здесь главная) -->
+      <nav class="breadcrumbs" aria-label="breadcrumb">
+        <ol>
+          <li>Главная</li>
+        </ol>
+      </nav>
+
+      <!-- Заголовок раздела -->
+      <h2>Информация о компании</h2>
+
+      <!-- Описание цели компании -->
+      <article class="company-goal">
+        <h3>Цель компании</h3>
+        <p>Главная цель компании – сделать любой отдых удобным, комфортным и безопасным.</p>
+        <img src="./assets/img/HAPPY.jpg" alt="Люди на отдыхе" class="people-image">
+      </article>
+
+      <!-- Общая информация о компании -->
+      <article class="company-overview">
+        <h3>Общая информация</h3>
+        <p>
+          Туристическая компания предоставляет эксклюзивный комплекс услуг на первоклассном уровне: от организации
+          путешествий и мероприятий разных форматов до корпоративного обслуживания.
+        </p>
+        <p>
+          Предлагаем Вам множество увлекательных туров по России и зарубежью, подберем для Вас лучшие варианты отдыха,
+          организуем индивидуальные или групповые классические и экскурсионные туры.
+        </p>
+        <p>
+          Авиа и железнодорожные билеты по России и миру, прямые перелеты, подбор лучших стыковочных рейсов, чартерные
+          билеты!
+        </p>
+        <p>
+          Клиенты туристической компании имеют возможность заказать организацию туристического отдыха по одному из
+          предоставленных маршрутов. Компания берет на себя обязательство по полному расчету отдыха с учетом всех
+          пожеланий клиентов.
+        </p>
+        <p>
+          Компания предоставляет широкий спектр дополнительных услуг, таких как: услуги проводников, аренда
+          туристического оборудования, информационная поддержка и многое другое.
+        </p>
+
+        <h3>Перспективы и планы развития</h3>
+        <p>
+          Наша компания активно стремится к постоянному развитию и расширению спектра услуг, чтобы оставаться лидером в
+          сфере туризма и соответствовать высоким ожиданиям наших клиентов. В ближайшие годы мы планируем:
+        </p>
+        <ul>
+          <li>Расширение географии туров — добавление новых направлений в Азии, Южной Америке и Австралии с учетом
+            современных туристических трендов и интересов клиентов.</li>
+          <li>Разработка эксклюзивных тематических маршрутов — эко-туризм, гастрономические путешествия, культурные
+            экспедиции и приключенческие туры с уникальными программами.</li>
+          <li>Внедрение цифровых сервисов — создание удобных мобильных приложений и онлайн-платформ для самостоятельного
+            бронирования и сопровождения путешествий в режиме реального времени.</li>
+          <li>Партнёрство с ведущими авиакомпаниями, отелями и локальными гидами для повышения качества сервиса и
+            эксклюзивности предложений.</li>
+          <li>Укрепление корпоративного направления — организация и сопровождение бизнес-мероприятий, конференций,
+            тимбилдингов с использованием интегрированных решений «под ключ».</li>
+          <li>Улучшение экологической ответственности — развитие устойчивого туризма с минимальным воздействием на
+            окружающую среду и поддержкой локальных сообществ.</li>
+        </ul>
+      </article>
+
+
+
+      <!-- Пошаговое описание процесса бронирования -->
+      <section class="booking-algorithm">
+        <h2>Как воспользоваться услугами компании</h2>
+        <ol class="steps-list">
+          <li>
+            <span class="step-number"></span>
+            Выбрать даты предполагаемого отдыха
+          </li>
+          <li>
+            <span class="step-number"></span>
+            Указать количество участников и их уровень подготовки
+          </li>
+          <li>
+            <span class="step-number"></span>
+            Выбрать желаемый регион для отдыха
+          </li>
+          <li>
+            <span class="step-number"></span>
+            Зарезервировать конкретные зоны, которые будут включены в обязательное посещение
+          </li>
+          <li>
+            <span class="step-number"></span>
+            Определить перечень дополнительных услуг
+          </li>
+          <li>
+            <span class="step-number"></span>
+            Оформить заказ
+          </li>
+        </ol>
+      </section>
+
+      <!-- Отзывы клиентов слайдер -->
+      <section id="customer-reviews" class="customer-reviews">
+        <h3>Отзывы клиентов</h3>
+
+        <div class="reviews-slider">
+          <!-- Радиокнопки для переключения отзывов -->
+          <input type="radio" name="review" id="review1" checked>
+          <input type="radio" name="review" id="review2">
+          <input type="radio" name="review" id="review3">
+
+          <!-- Обертка для отзывов -->
+          <div class="reviews-wrapper">
+            <!-- Отзыв 1 -->
+            <div class="review-card" id="card1">
+              <img src="./assets/img/img_avatar1.PNG" alt="Аватар клиента 1" class="avatar">
+              <h4>Анна П.</h4>
+              <div class="stars">★★★★★</div>
+              <p>Отличный сервис, путешествие прошло на высшем уровне! Очень довольна организацией.</p>
+            </div>
+
+            <!-- Отзыв 2 -->
+            <div class="review-card" id="card2">
+              <img src="./assets/img/img_avatar2.PNG" alt="Аватар клиента 2" class="avatar">
+              <h4>Иван К.</h4>
+              <div class="stars">★★★★☆</div>
+              <p>Все понравилось, но хотелось бы больше вариантов экскурсий. В остальном отлично.</p>
+            </div>
+
+            <!-- Отзыв 3 -->
+            <div class="review-card" id="card3">
+              <img src="./assets/img/img_avatar3.PNG" alt="Аватар клиента 3" class="avatar">
+              <h4>Мария С.</h4>
+              <div class="stars">★★★★★</div>
+              <p>Очень понравилось качество обслуживания и индивидуальный подход к клиенту.</p>
+            </div>
+          </div>
+
+          <!-- Кнопки управления слайдером -->
+          <div class="review-controls">
+            <label for="review1" class="control-btn" aria-label="Отзыв 1"></label>
+            <label for="review2" class="control-btn" aria-label="Отзыв 2"></label>
+            <label for="review3" class="control-btn" aria-label="Отзыв 3"></label>
+          </div>
+        </div>
+      </section>
+
+      <!-- Промо-секция с призывом к бронированию -->
+      <section id="order_for_me">
+        <img src="./assets/img/VAYU.gif" alt="" width="50px">
+        <p>Бронируйте лучшие места для тура только у нас!</p>
+      </section>
+  </main>
+
+  <!-- Подвал сайта -->
+  <footer class="site-footer">
+    <div class="footer-container">
+      <!-- О компании -->
+      <div class="footer-column footer-about">
+        <h4>О компании</h4>
+        <p>Туристическая компания «Фортуна-2» — ваш надежный партнер в организации незабываемых путешествий.</p>
+      </div>
+
+      <!-- Контактная информация -->
+      <div id="contacts" class="footer-column footer-contacts">
+        <h4>Контакты</h4>
+        <address>
+          Телефон: +7 (495) 123-45-67<br>
+          Email: <a href="mailto:info@fortuna-2.ru">info@fortuna-2.ru</a><br>
+          Адрес: г. Санкт-Петербург, ул. Руставели, д. 33
+        </address>
+      </div>
+
+      <!-- Навигационное меню в подвале -->
+      <div class="footer-column footer-navigation">
+        <h4>Навигация</h4>
+        <ul>
+          <li><a href="#">Главная</a></li>
+          <li><a href="./assets/html/search/search.html">Туры</a></li>
+          <li><a href="#customer-reviews">Отзывы</a></li>
+          <li><a href="#contacts">Контакты</a></li>
+          <li><a href="#">Карта сайта</a></li>
+        </ul>
+      </div>
+
+      <!-- Ссылки на соцсети -->
+      <div class="footer-column footer-social">
+        <h4>Мы в социальных сетях</h4>
+        <div class="social-buttons">
+          <a href="#" class="social-btn">
+            <img src="./assets/img/vk.png" alt="VK" class="social-icon">
+          </a>
+          <a href="#" class="social-btn">
+            <img src="./assets/img/tg.png" alt="Telegram" class="social-icon">
+          </a>
+          <a href="#" class="social-btn">
+            <img src="./assets/img/youtube.png" alt="YouTube" class="social-icon">
+          </a>
+        </div>
+      </div>
+
+      <!-- Нижняя часть подвала с копирайтом -->
+      <div class="footer-bottom">
+        <p>© 2025 Фортуна-2. Все права защищены.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

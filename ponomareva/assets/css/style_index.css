@@ -1,0 +1,676 @@
+/* Основные стили и шрифты */
+body {
+  background-color: #F4F8FB;
+  color: #333333;
+  font-family: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serifя;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* Шапка */
+header {
+  background: linear-gradient(to right, #0057B8, #00489E);
+  color: white;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(92, 46, 46, 0.15);
+  max-width: 99%;
+  margin: 20px auto;
+  box-sizing: border-box;
+}
+
+
+/* Верхняя часть: логотип и меню */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 800;
+  font-size: 1.8rem;
+  user-select: none;
+  color: white;
+  text-shadow: 1px 1px 2px #003E7E;
+}
+
+.logo img {
+  width: 50px;
+  height: 40px;
+  object-fit: contain;
+  filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.2));
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  gap: 12px;          /* расстояние между иконкой и текстом */
+  color: inherit;     /* цвет текста такой же, как у родителя */
+  text-decoration: none; /* убирает подчеркивание ссылки */
+}
+
+/* Меню */
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  color: #FF9F1C;
+  font-weight: 600;
+  font-size: 1.05rem;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+  position: relative;
+}
+
+.main-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #FFD166;
+  transition: width 0.3s ease;
+}
+
+.main-nav a:hover::after,
+.main-nav a:focus::after {
+  width: 100%;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: #FFD166;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Заголовок */
+header h1 {
+  font-size: 2.6rem;
+  margin-bottom: 8px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Цитата */
+.header-quote {
+  font-style: italic;
+  color: #FF9F1C;
+  border-left: 4px solid #FF9F1C;
+  padding-left: 15px;
+  font-size: 1.5em;
+  margin-bottom: 25px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 6px;
+}
+
+.breadcrumbs ol {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  padding: 0;
+  margin: 1em 0;
+}
+
+.breadcrumbs li {
+  color: #555;
+}
+
+.breadcrumbs li+li::before {
+  content: "›";
+  /* стрелочка-разделитель */
+  margin: 0 0.5em;
+  color: #999;
+}
+
+.breadcrumbs a {
+  color: #0077cc;
+  text-decoration: none;
+}
+
+.breadcrumbs a:hover {
+  text-decoration: underline;
+}
+
+/* Блок бронирования */
+.booking {
+  background-color: #003E7E;
+  padding: 20px;
+  width: 65%;
+  max-width: 1300px;
+  border-radius: 8px;
+  margin: 20px auto 0;
+  color: white;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+/* Поисковая форма */
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  margin-bottom: 2em;
+}
+
+.search-form select,
+.search-form input {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.search-form select {
+  background-color: white;
+  color: #333;
+}
+
+.field-wrapper {
+  position: relative;
+}
+
+.field-wrapper input {
+  background-color: white;
+  color: #333;
+  padding: 10px 10px 30px 10px;
+}
+
+.field-wrapper .hint {
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  font-size: 0.85rem;
+  color: #666;
+  pointer-events: none;
+  user-select: none;
+}
+
+.search-form button {
+  background-color: #FF9F1C;
+  border: none;
+  color: #003E7E;
+  font-weight: 700;
+  padding: 10px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  grid-column: 1 / -1;
+  max-width: 150px;
+  justify-self: center;
+}
+
+.search-form button:hover,
+.search-form button:focus {
+  background-color: #FFD166;
+  color: #003E7E;
+  outline: none;
+}
+
+/* Форма подписки */
+.subscribe-form {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5em;
+}
+
+.subscribe-form input[type="email"] {
+  padding: 10px 15px;
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  width: 280px;
+  max-width: 100%;
+  box-sizing: border-box;
+  color: #333;
+  background-color: white;
+}
+
+.subscribe-form button {
+  background-color: #FF9F1C;
+  color: #003E7E;
+  font-weight: 700;
+  padding: 10px 30px;
+  border-radius: 4px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+}
+
+.subscribe-form button:hover,
+.subscribe-form button:focus {
+  background-color: #FFD166;
+  color: #003E7E;
+  outline: none;
+}
+
+
+/* Основное содержимое */
+main {
+  padding: 40px 20px;
+  max-width: 60%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.company-info,
+.booking-algorithm {
+  background-color: #fefefe;
+  border-radius: 10px;
+  padding: 25px 30px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.05);
+  transition: box-shadow 0.3s ease;
+}
+
+.company-info:hover,
+.booking-algorithm:hover {
+  box-shadow: 0 6px 20px rgb(0 0 0 / 0.12);
+}
+
+.company-info h2,
+.booking-algorithm h2 {
+  font-size: 1.8rem;
+  color: #0057B8;
+  border-bottom: 3px solid #FF9F1C;
+  padding-bottom: 8px;
+  margin-bottom: 25px;
+}
+
+.company-goal,
+.company-overview {
+  margin-bottom: 20px;
+}
+
+.company-goal h3,
+.company-overview h3 {
+  color: #FF9F1C;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.people-image {
+  display: block;
+  /* делает изображение блочным элементом */
+  margin: 0 auto;
+  /* автоматические отступы слева и справа */
+  width: 60%;
+  border-radius: 15px;
+  max-width: 100%;
+  height: auto;
+}
+
+
+/* ===== Список шагов бронирования ===== */
+
+ol.steps-list {
+  list-style: none;
+  padding-left: 0;
+  counter-reset: step;
+}
+
+.steps-list li {
+  position: relative;
+  padding-left: 45px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  color: #003E7E;
+  cursor: default;
+  transition: color 0.3s ease;
+}
+
+.steps-list li:hover {
+  color: #FF9F1C;
+}
+
+.steps-list li::before {
+  content: counter(step);
+  counter-increment: step;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  background-color: #FF9F1C;
+  color: white;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 32px;
+  font-weight: 700;
+  box-shadow: 0 2px 8px rgb(255 159 28 / 0.5);
+  user-select: none;
+}
+
+#order_for_me {
+  border-radius: 20px;
+  color: #0a163280;
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  width: fit-content;
+  animation: pulse 2.5s infinite;
+}
+
+/* Подвал */
+.site-footer {
+  background: linear-gradient(to right, #0057B8, #00489E);
+  color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.1);
+  margin: 60px auto 20px;
+  max-width: 99%;
+  font-family: inherit;
+  box-sizing: border-box;
+}
+
+
+/* Сетка колонок */
+.footer-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+/* Заголовки секций */
+.footer-column h4 {
+  font-size: 1.1rem;
+  color: #FF9F1C;
+  margin-bottom: 14px;
+}
+
+/* Общий стиль текста */
+.footer-column p,
+.footer-column address,
+.footer-column ul {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0;
+  color: #f2f2f2;
+}
+
+/* Контакты */
+.footer-column address a {
+  color: #FFD166;
+  text-decoration: none;
+}
+
+.footer-column address a:hover {
+  text-decoration: underline;
+}
+
+/* Навигация */
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 6px;
+}
+
+.footer-column ul li a {
+  color: #FFD166;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-column ul li a:hover,
+.footer-column ul li a:focus {
+  color: #FF9F1C;
+  outline: none;
+}
+
+/* Кнопки соцсетей */
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #FF9F1C;
+  color: #0057B8;
+  padding: 15px 15px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn:hover,
+.social-btn:focus {
+  background-color: #FFD166;
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* PNG-иконки */
+.social-icon {
+  width: auto;
+  height: auto;
+  display: inline-block;
+  object-fit: contain;
+}
+
+/* Мобильная адаптация */
+@media (max-width: 768px) {
+
+  /* Шапка */
+  .header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Форма поиска и бронирования */
+  .booking {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+    /* одна колонка */
+    gap: 15px;
+  }
+
+  .search-form button {
+    max-width: 100%;
+    justify-self: stretch;
+    /* кнопка на всю ширину */
+  }
+
+  /* Основной контент */
+  main {
+    max-width: 95%;
+    padding: 20px 10px;
+  }
+
+  /* Футер */
+  .footer-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .footer-about,
+  .footer-contacts,
+  .footer-navigation {
+    flex: 1 0 100%;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+    padding: 10px 0;
+  }
+}
+
+
+.customer-reviews {
+  max-width: 700px;
+  margin: 0 auto 3em;
+  color: #003E7E;
+  font-family: inherit;
+  text-align: center;
+}
+
+.customer-reviews h3 {
+  margin-bottom: 1em;
+  font-size: 1.8rem;
+}
+
+/* Слайдер */
+.reviews-slider {
+  position: relative;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 62, 126, 0.2);
+  padding: 2em 1.5em;
+}
+
+/* скрываем радиокнопки */
+.reviews-slider input[type="radio"] {
+  display: none;
+}
+
+.reviews-wrapper {
+  display: flex;
+  width: 300%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Переключение слайдов по checked */
+#review1:checked~.reviews-wrapper {
+  transform: translateX(0%);
+}
+
+#review2:checked~.reviews-wrapper {
+  transform: translateX(-33.3333%);
+}
+
+#review3:checked~.reviews-wrapper {
+  transform: translateX(-66.6666%);
+}
+
+/* Карточка отзыва */
+.review-card {
+  flex: 0 0 33.3333%;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5em;
+  border: 3px solid #FF9F1C;
+  object-fit: cover;
+}
+
+.review-card h4 {
+  margin-bottom: 0.25em;
+  color: #003E7E;
+}
+
+.stars {
+  color: #FF9F1C;
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+  user-select: none;
+}
+
+.review-card p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.4;
+}
+
+/* Навигационные кнопки */
+.review-controls {
+  margin-top: 1.5em;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.control-btn {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #ddd;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.control-btn:hover {
+  background-color: #FF9F1C;
+}
+
+#review1:checked~.review-controls label[for="review1"],
+#review2:checked~.review-controls label[for="review2"],
+#review3:checked~.review-controls label[for="review3"] {
+  background-color: #FF9F1C;
+}
+
+
+/* Дополнительная адаптация для очень узких экранов (до 400px) */
+@media (max-width: 400px) {
+  header {
+    padding: 15px 20px;
+  }
+
+  .booking {
+    padding: 10px;
+  }
+
+  main {
+    padding: 15px 10px;
+  }
+
+  .search-form button {
+    padding: 12px;
+    font-size: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+  }
+}
